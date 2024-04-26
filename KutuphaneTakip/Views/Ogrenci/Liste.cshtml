@@ -1,0 +1,29 @@
+﻿@model List<KutuphaneTakip.Models.Ogrenci>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Öğrenci Id</th>
+            <th scope="col">Öğrenci Numara</th>
+            <th scope="col">Ad Soyad</th>
+            <th scope="col">Sınıf</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+        <td>@item.OgrenciId</td>
+        <td>@item.OgrenciNo</td>
+        <td>@item.OgrenciAdSoyad</td>
+        <td>@item.OgrenciSinif</td>
+        <td>
+            <a asp-controller="ogrenci" asp-action="adresekle" asp-route-id="@item.OgrenciId">
+                Adres Ekle
+            </a>
+        </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+

@@ -1,0 +1,21 @@
+﻿@model KutuphaneTakip.Models.Ogrenci;
+
+<form asp-controller="ogrenci" asp-action="ekle" method="POST">
+    <div asp-validation-summary="All"></div>
+    <div class="form-group">
+        <label asp-for="OgrenciNo"></label>
+        <input asp-for="OgrenciNo" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="OgrenciAdSoyad"></label>
+        <input asp-for="OgrenciAdSoyad" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="OgrenciSinif"></label>
+        <input asp-for="OgrenciSinif" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary"> Kaydet</button>
+    </div>
+</form>

@@ -1,0 +1,17 @@
+﻿@model KutuphaneTakip.Models.KitapTur;
+<form asp-controller="kitaptur" asp-action="ekle" method="post">
+    <div asp-validation-summary="All"></div>
+    <div class="form-group">
+        <label asp-for="KitapTurAdi"></label>
+        <input asp-for="KitapTurAdi" class="form-control">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary"> Kaydet</button>
+    </div>
+    <div class="form-group">
+        <label asp-for="KitapTurId"></label>
+        <select class="form-control" asp-for="KitapTurId"
+                asp-items="@(new SelectList(ViewBag.KitapTurList,"KitapTurId","KitapTurAdi"))">
+        </select>
+    </div>
+</form>

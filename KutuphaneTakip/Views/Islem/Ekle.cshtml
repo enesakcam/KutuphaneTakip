@@ -1,0 +1,27 @@
+﻿@model KutuphaneTakip.Models.Islem;
+<form asp-controller="islem" asp-action="ekle" method="post">
+    <div asp-validation-summary="All"></div>
+    <div class="form-group">
+        <label> Öğrenci Adı</label>
+        <select class="form-control" asp-for="OgrenciId"
+                asp-items="@(new SelectList(ViewBag.Ogrenciler,"OgrenciId","OgrenciAdSoyad"))">
+        </select>
+    </div>
+    <div class="form-group">
+        <label> Kitap Adı</label>
+        <select class="form-control" asp-for="KitapId"
+                asp-items="@(new SelectList(ViewBag.Kitaplar,"KitapId","KitapAdi"))">
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Alış Tarihi</label>
+        <input asp-for="AlisTarih" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Veriş Tarihi</label>
+        <input asp-for="VerisTarih" class="form-control">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary"> Kaydet</button>
+    </div>
+</form>

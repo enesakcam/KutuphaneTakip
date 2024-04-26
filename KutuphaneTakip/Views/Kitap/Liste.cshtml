@@ -1,0 +1,35 @@
+﻿@model IList<KutuphaneTakip.Models.Kitap>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>ID</th>
+            <th>Kitap Adı</th>
+            <th>Kitap Yazarı</th>
+            <th>Tür</th>
+            <th>Yayın Evi</th>
+
+            <th>kitap tür adı</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.KitapId</td>
+                <td>@item.KitapAdi</td>
+                <td>@item.KitapYazar</td>
+                <td>@item.KitapTur</td>
+                <td>@item.YayinEvi</td>
+                <td>@item.KitapTur.KitapTurAdi</td>
+                <td>
+                    <a asp-controller="kitap" asp-action="guncelle" asp-route-id="@item.KitapId">
+                        -
+                        Güncelle
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

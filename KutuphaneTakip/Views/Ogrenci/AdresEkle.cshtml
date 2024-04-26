@@ -1,0 +1,11 @@
+﻿@model KutuphaneTakip.Models.Adres
+<p><b>Öğrenci Id:</b>@ViewBag.Ogrenci.OgrenciId </p>
+<p><b>Öğrenci Numara:</b> @ViewBag.Ogrenci.OgrenciNo</p>
+<p><b>Ad Soyad:</b> @ViewBag.Ogrenci.OgrenciAdSoyad</p>
+<p><b>Sınıf:</b>@ViewBag.Ogrenci.OgrenciSinif</p>
+<form asp-controller="ogrenci" asp-action="adresekle" method="post">
+    <input value="@ViewBag.Ogrenci.OgrenciId" type="hidden" name="OgrenciId"></
+    input>
+<textarea asp-for="OgrenciAdres" class="form-control"></textarea>
+    <button class="btn btn-primary">Adres Ekle</button>
+</form>
